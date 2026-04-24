@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>MentalHub</title>
+  <meta name="description" content="MentalHub offers compassionate, evidence-based mental health rehabilitation to restore balance, rebuild resilience, and reclaim joy. Start your journey today.">
+  <!-- Google Fonts & simple CSS reset -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #fefefe;
+      color: #1e2a3e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* header / navigation */
+    header {
+      background: #ffffff;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.03);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(2px);
+      background-color: rgba(255, 255, 255, 0.96);
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 0;
+      flex-wrap: wrap;
+    }
+
+    .logo h1 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      background: linear-gradient(135deg, #2b7a62, #5d9b8b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .logo span {
+      font-size: 0.9rem;
+      font-weight: 400;
+      color: #5b6e8c;
+      display: block;
+      letter-spacing: 0.2px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: #1f3b4c;
+      transition: color 0.2s;
+      font-size: 1rem;
+    }
+
+    .nav-links a:hover, .nav-links a.active {
+      color: #2b7a62;
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1.5px solid #2b7a62;
+      padding: 0.5rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #2b7a62;
+      transition: all 0.2s;
+    }
+
+    .btn-outline:hover {
+      background: #2b7a62;
+      color: white;
+    }
+
+    /* buttons */
+    .btn-primary {
+      background: #2b7a62;
+      border: none;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: white;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background: #1e5f4b;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px -8px rgba(43, 122, 98, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      border: 1.5px solid #cbd5e1;
+      padding: 0.8rem 1.8rem;
+      border-radius: 40px;
+      font-weight: 600;
+      color: #1e2a3e;
+      transition: 0.2s;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-secondary:hover {
+      border-color: #2b7a62;
+      background: #f9fbfa;
+    }
+
+    /* hero */
+    .hero {
+      padding: 5rem 0 6rem 0;
+      background: linear-gradient(145deg, #ffffff 0%, #f4faf7 100%);
+    }
+
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-content {
+      flex: 1;
+    }
+
+    .hero-badge {
+      background: #e0f2e9;
+      color: #2b7a62;
+      font-weight: 600;
+      font-size: 0.85rem;
+      display: inline-block;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-content h1 {
+      font-size: 3.4rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      margin-bottom: 1.2rem;
+      color: #0f2c38;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;
+      color: #4a5b6e;
+      margin-bottom: 2rem;
+      max-width: 90%;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-image {
+      flex: 1;
+      text-align: center;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 2rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2);
+    }
+
+    /* services section */
+    .section {
+      padding: 5rem 0;
+    }
+
+    .section-alt {
+      background-color: #f9fdfb;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+      color: #0f2c38;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: #5b6e8c;
+      max-width: 650px;
+      margin: 0 auto 3rem auto;
+      font-size: 1.1rem;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 2rem;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.03);
+      transition: all 0.25s ease;
+      border: 1px solid #eef2f0;
+      text-align: center;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 30px -12px rgba(43, 122, 98, 0.12);
+      border-color: #cfe6df;
+    }
+
+    .service-icon {
+      background: #e9f4f0;
+      width: 70px;
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 30px;
+      margin: 0 auto 1.5rem auto;
+      font-size: 2rem;
+      color: #2b7a62;
+    }
+
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .service-card p {
+      color: #5b6e8c;
+    }
+
+    /* about + approach */
+    .two-col {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .col {
+      flex: 1;
+    }
+
+    .col h2 {
+      font-size: 2rem;
+      margin-bottom: 1.2rem;
+      font-weight: 700;
+    }
+
+    .approach-list {
+      list-style: none;
+      margin-top: 1.5rem;
+    }
+
+    .approach-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.2rem;
+      font-size: 1rem;
+    }
+
+    .approach-list i {
+      color: #2b7a62;
+      font-size: 1.3rem;
+      width: 28px;
+    }
+
+    /* testimonials */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background: white;
+      border-radius: 1.8rem;
+      padding: 2rem;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.02);
+      border: 1px solid #ecf3f0;
+    }
+
+    .testimonial-card i.fa-quote-left {
+      color: #cbe6de;
+      font-size: 2rem;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .testimonial-card p {
+      font-style: italic;
+      margin-bottom: 1.5rem;
+      color: #2c3e4e;
+    }
+
+    .client {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .client-avatar {
+      width: 48px;
+      height: 48px;
+      background: #d9efe8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #1e5f4b;
+    }
+
+    .client-info h4 {
+      font-weight: 700;
+    }
+
+    /* contact / CTA */
+    .cta-section {
+      background: linear-gradient(105deg, #1e3b3a 0%, #205b4f 100%);
+      border-radius: 2.5rem;
+      padding: 3.5rem 2.5rem;
+      text-align: center;
+      color: white;
+      margin: 2rem 0;
+    }
+
+    .cta-section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+      margin-bottom: 2rem;
+      opacity: 0.9;
+    }
+
+    .cta-section .btn-primary {
+      background: white;
+      color: #205b4f;
+    }
+
+    .cta-section .btn-primary:hover {
+      background: #f0f7f4;
+      transform: scale(1.02);
+    }
+
+    /* footer */
+    footer {
+      background: #0f2c2a;
+      color: #cddfda;
+      padding: 3rem 0 2rem;
+      margin-top: 3rem;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .footer-col h3 {
+      color: white;
+      font-size: 1.3rem;
+      margin-bottom: 1rem;
+    }
+
+    .footer-col p, .footer-col a {
+      color: #bdd3cc;
+      text-decoration: none;
+      line-height: 1.6;
+    }
+
+    .footer-col a:hover {
+      color: white;
+    }
+
+    .social-icons i {
+      font-size: 1.4rem;
+      margin-right: 1rem;
+      transition: 0.2s;
+    }
+
+    .copyright {
+      text-align: center;
+      border-top: 1px solid #2e554b;
+      padding-top: 2rem;
+      font-size: 0.85rem;
+    }
+
+    /* responsiveness */
+    @media (max-width: 800px) {
+      .navbar {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .nav-links {
+        gap: 1.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+      }
+      .hero-content p {
+        max-width: 100%;
+      }
+      .container {
+        padding: 0 24px;
+      }
+      .section-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="navbar">
+      <div class="logo">
+        <h1>MentalHub</h1>
+        <span>rehabilitation & wellness</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#testimonials">Stories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a href="#contact" class="btn-outline">Get Support</a>
+    </div>
+  </div>
+</header>
+
+<main>
+  <!-- Hero section -->
+  <section id="home" class="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fas fa-heartbeat"></i> evidence-based care</div>
+        <h1>Restore balance,<br> rebuild resilience.</h1>
+        <p>MentalHub provides compassionate, holistic rehabilitation for anxiety, depression, trauma, and burnout. We walk beside you toward lasting recovery.</p>
+        <div class="hero-buttons">
+          <a href="#contact" class="btn-primary">Start your journey <i class="fas fa-arrow-right"></i></a>
+          <a href="#services" class="btn-secondary">Explore programs</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <!-- calm illustration / svg-like placeholder (inline abstract) -->
+        <img src="https://placehold.co/600x500/e2f0ec/2b7a62?text=🌿+Hope+&+Healing" alt="calm therapeutic environment illustration" style="object-fit: cover;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Services section -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 class="section-title">Our rehabilitation services</h2>
+      <div class="section-sub">Personalized, integrative programs to support your mental health recovery journey.</div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-brain"></i></div>
+          <h3>Individual Therapy</h3>
+          <p>CBT, DBT, trauma-informed care, and solution-focused sessions tailored to you.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-users"></i></div>
+          <h3>Group Support</h3>
+          <p>Connection, shared experience, and skill-building in safe peer-led circles.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-spa"></i></div>
+          <h3>Wellness & Mindfulness</h3>
+          <p>Yoga, meditation, breathwork, and nature-based practices to regulate nervous system.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+          <h3>Life Skills Coaching</h3>
+          <p>Rebuild daily routines, emotional regulation, and communication for sustainable independence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach + Philosophy -->
+  <section id="approach" class="section section-alt">
+    <div class="container two-col">
+      <div class="col">
+        <img src="https://placehold.co/540x480/d9f0ea/2b7a62?text=🌱+Nurturing+Recovery" alt="calm therapy session concept" style="width:100%; border-radius: 2rem; box-shadow: 0 12px 28px rgba(0,0,0,0.05);">
+      </div>
+      <div class="col">
+        <h2>Our holistic rehabilitation approach</h2>
+        <p>We treat the whole person — not just symptoms. Our framework integrates clinical excellence with compassionate support, empowering you to reconnect with meaning and joy.</p>
+        <ul class="approach-list">
+          <li><i class="fas fa-check-circle"></i> <strong>Trauma-informed & inclusive</strong> — safety first, always.</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Evidence-based modalities</strong> — CBT, ACT, EMDR, and somatic work.</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Continuum of care</strong> — from intensive outpatient to transitional living guidance.</li>
+          <li><i class="fas fa-check-circle"></i> <strong>Family & caregiver integration</strong> — rebuild supportive networks.</li>
+        </ul>
+        <a href="#contact" class="btn-primary" style="margin-top: 1rem;">Speak with a specialist</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials (real human stories) -->
+  <!-- <section id="testimonials" class="section">
+    <div class="container">
+      <h2 class="section-title">Real stories of healing</h2>
+      <div class="section-sub">Our clients find renewed strength and purpose. These journeys inspire us every day.</div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“Before MentalHub, I felt trapped in my own anxiety. The combination of therapy, mindfulness groups, and genuine care gave me my life back. I’ve learned to navigate triggers and feel hope again.”</p>
+          <div class="client">
+            <div class="client-avatar"><i class="fas fa-user"></i></div>
+            <div class="client-info"><h4>Alex R.</h4><span>anxiety recovery</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“The rehabilitation program helped me rebuild after severe burnout. The staff treated me with dignity and tailored every step. I’m now back at work and sleeping peacefully for the first time in years.”</p>
+          <div class="client">
+            <div class="client-avatar"><i class="fas fa-user"></i></div>
+            <div class="client-info"><h4>Jamie L.</h4><span>burnout recovery</span></div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <i class="fas fa-quote-left"></i>
+          <p>“As a family, we were overwhelmed. The family sessions and compassionate guidance helped us support our son without judgment. The healing has been profound.”</p>
+          <div class="client">
+            <div class="client-avatar"><i class="fas fa-user-friends"></i></div>
+            <div class="client-info"><h4>Maya & David</h4><span>family support</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Contact & intake section -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="cta-section">
+        <h2><i class="fas fa-leaf"></i> Begin your recovery journey</h2>
+        <p>Reach out today — our intake team is here to answer your questions in complete confidence.</p>
+        <a href="#" class="btn-primary" id="contactBtn" style="background: white; color:#205b4f;">Call or email us <i class="fas fa-phone-alt"></i></a>
+        <p style="margin-top: 1.5rem; font-size: 0.9rem;">📞 +265 982 141 758  |  📧 bryanngoma096@gmail.com  |  💬 24/7 confidential support</p>
+      </div>
+      
+      <!-- additional contact form simulation (simple) -->
+      <div style="max-width: 700px; margin: 2rem auto 0; background: white; border-radius: 2rem; padding: 2rem; box-shadow: 0 8px 20px rgba(0,0,0,0.02); border: 1px solid #eef2f0;">
+        <h3 style="font-size: 1.6rem; margin-bottom: 0.5rem;">Send a confidential message</h3>
+        <p style="margin-bottom: 1.5rem;">We’ll reach out within 24 hours. Your information is protected.</p>
+        <form id="contactForm">
+          <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem;">
+            <input type="text" placeholder="Full name" style="flex:1; padding: 0.9rem 1rem; border-radius: 60px; border: 1px solid #dce5e2; font-family: inherit;" required>
+            <input type="email" placeholder="Email address" style="flex:1; padding: 0.9rem 1rem; border-radius: 60px; border: 1px solid #dce5e2;" required>
+          </div>
+          <textarea rows="3" placeholder="How can we support you?" style="width:100%; padding: 1rem; border-radius: 1.5rem; border: 1px solid #dce5e2; font-family: inherit; margin-bottom: 1rem;"></textarea>
+          <button type="submit" class="btn-primary" style="border: none; width: 100%;">Send message →</button>
+          <p id="formFeedback" style="margin-top: 1rem; font-size: 0.85rem; text-align: center;"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>MentalHub</h3>
+        <p>Holistic mental health rehabilitation. Where healing meets science & compassion.</p>
+        <div class="social-icons" style="margin-top: 1rem;">
+          <i class="fab fa-instagram"></i>
+          <i class="fab fa-facebook"></i>
+          <i class="fab fa-linkedin"></i>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h3>Explore</h3>
+        <p><a href="#services">Services</a></p>
+        <p><a href="#approach">Approach</a></p>
+        <p><a href="#testimonials">Recovery stories</a></p>
+        <p><a href="#contact">Get help</a></p>
+      </div>
+      <div class="footer-col">
+        <h3>Contact</h3>
+        <p><i class="fas fa-map-marker-alt"></i>Likuni<br>Lilongwe</p>
+        <p><i class="fas fa-phone"></i> +265 982 141 758</p>
+        <p><i class="fas fa-envelope"></i> bryanngoma096@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Crisis support</h3>
+        <p>If you're in crisis, please call 988 (Suicide & Crisis Lifeline) or your local emergency number. We are here for non-emergency rehab support.</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; MentalHub Rehabilitation Center — A place for renewal. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- simple interactive alert & form handling -->
+<script>
+  // smooth scroll for navigation links
+  document.querySelectorAll('.nav-links a, .btn-outline, .btn-primary[href^="#"], .btn-secondary[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        e.preventDefault();
+        const targetId = href.substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+          targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    });
+  });
+
+  // Contact button in CTA also smooth scroll to contact? but contact section exists, but we also show alert info.
+  const contactCtaBtn = document.getElementById('contactBtn');
+  if(contactCtaBtn) {
+    contactCtaBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const contactSec = document.getElementById('contact');
+      if(contactSec) contactSec.scrollIntoView({ behavior: 'smooth' });
+      // additional gentle highlight
+    });
+  }
+
+  // contact form simple feedback (no actual backend)
+  const contactForm = document.getElementById('contactForm');
+  const formFeedback = document.getElementById('formFeedback');
+  if(contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const nameInput = contactForm.querySelector('input[type="text"]');
+      const emailInput = contactForm.querySelector('input[type="email"]');
+      if(nameInput && emailInput && nameInput.value.trim() !== '' && emailInput.value.includes('@')) {
+        formFeedback.innerHTML = '✅ Thank you, ' + nameInput.value.split(' ')[0] + '. A specialist will respond within 24h. You are not alone.';
+        formFeedback.style.color = '#2b7a62';
+        contactForm.reset();
+      } else {
+        formFeedback.innerHTML = '⚠️ Please provide a valid name and email address. We’re here to help.';
+        formFeedback.style.color = '#bc6c25';
+      }
+      setTimeout(() => {
+        if(formFeedback) formFeedback.innerHTML = '';
+      }, 5000);
+    });
+  }
+
+  // active link highlight on scroll (basic)
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    const scrollPosition = window.scrollY + 120;
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      if(scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.classList.remove('active');
+      const href = link.getAttribute('href')?.substring(1);
+      if(href === current) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
